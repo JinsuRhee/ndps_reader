@@ -37,11 +37,12 @@ nr.read('halo_0100.txt')                    # picks the reader from the file nam
 
 ## Examples
 
-Step-by-step notebooks in [`examples/`](examples/), one per file type:
+[`examples/01_catalog.ipynb`](examples/01_catalog.ipynb) is a step-by-step notebook
+covering every file in a download:
 
-- [`01_catalog.ipynb`](examples/01_catalog.ipynb): `galaxy_NNNN` / `halo_NNNN` catalogs
-- [`02_members.ipynb`](examples/02_members.ipynb): `galaxy_pid_NNNN` member particle IDs
-- [`03_snapinfo.ipynb`](examples/03_snapinfo.ipynb): `snapinf_NNNN.txt` and `error.txt`
+- `galaxy_NNNN` / `halo_NNNN` catalogs (sections 2–8)
+- `galaxy_pid_NNNN` member particle IDs (section 4-(2))
+- `snapinf_NNNN.txt` and `error.txt` (section 9)
 
 ## Notes
 
