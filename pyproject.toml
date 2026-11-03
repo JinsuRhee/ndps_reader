@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ndps_reader"
+version = "0.1.0"
+description = "Read NDPS galaxy/halo catalogs in pickle or ASCII format"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["numpy>=1.16"]
+
+[tool.setuptools]
+py-modules = ["ndps_reader"]
