@@ -6,7 +6,7 @@ copied next to your script instead of installed.
 A catalog job produces, per snapshot:
     galaxy_NNNN.{pkl,txt}      structured array of object properties (halo_ for halos)
     galaxy_pid_NNNN.{pkl,txt}  member particle IDs (only when requested)
-    snapinf_NNNN.txt           snapshot metadata, one ``key = <json>`` per line
+    snapinfo_NNNN.txt          snapshot metadata, one ``key = <json>`` per line
 """
 
 import json
@@ -152,7 +152,7 @@ def read_members(filename, trusted=False):
 
 
 def read_snapinfo(filename):
-    """Read snapinf_NNNN.txt into a dict (values decoded from JSON)."""
+    """Read snapinfo_NNNN.txt into a dict (values decoded from JSON)."""
     info = {}
     with open(filename, encoding='ascii') as stream:
         for number, line in enumerate(stream, start=1):
@@ -168,7 +168,7 @@ def read_snapinfo(filename):
 def read(filename, trusted=False):
     """Read any NDPS catalog output, choosing the reader from the file name."""
     name = Path(filename).name
-    if name.startswith('snapinf_'):
+    if name.startswith(('snapinfo_', 'snapinf_')):
         return read_snapinfo(filename)
     if re.match(r'(galaxy|halo)_pid_', name):
         return read_members(filename, trusted)
