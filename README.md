@@ -6,7 +6,7 @@ Reads the catalog files in an NDPS catalog download (`<job ID>.zip`).
 |---|---|---|
 | `galaxy_NNNN.pkl` / `.txt` (`halo_` for halos) | One row per object, properties as columns | `read_catalog` |
 | `galaxy_pid_NNNN.pkl` / `.txt` | Member particle IDs per object | `read_members` |
-| `snapinf_NNNN.txt` | Snapshot metadata (e.g. `aexp`) | `read_snapinfo` |
+| `snapinfo_NNNN.txt` | Snapshot metadata (e.g. `aexp`) | `read_snapinfo` |
 
 ## Install
 
@@ -30,7 +30,7 @@ sfr = cat['SFR']                            # vector properties keep their shape
 pid = nr.read_members('galaxy_pid_0680.txt')
 pid['P_ID'][0]                              # particle IDs of the first object
 
-info = nr.read_snapinfo('snapinf_0680.txt') # {'aexp': 0.5838..., ...}
+info = nr.read_snapinfo('snapinfo_0680.txt') # {'aexp': 0.5838..., ...}
 
 nr.read('halo_0100.txt')                    # picks the reader from the file name
 ```
@@ -42,7 +42,7 @@ covering every file in a download:
 
 - `galaxy_NNNN` / `halo_NNNN` catalogs (sections 2–8)
 - `galaxy_pid_NNNN` member particle IDs (section 4-(2))
-- `snapinf_NNNN.txt` and `error.txt` (section 9)
+- `snapinfo_NNNN.txt` and `error.txt` (section 9)
 
 ## Notes
 
